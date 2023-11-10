@@ -4,7 +4,7 @@ import os
 
 # Load the jpg file into a numpy array
 
-image = face_recognition.load_image_file("Ronaldo.jpg")
+image = face_recognition.load_image_file("Image/biden.jpg")
 
 # Find all facial features in all the faces in the image
 face_landmarks_list = face_recognition.face_landmarks(image)
