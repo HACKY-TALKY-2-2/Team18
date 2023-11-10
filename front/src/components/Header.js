@@ -1,12 +1,19 @@
 import React from "react";
 import "../css/startBox.css";
+import { useNavigate } from "react-router-dom";
 
 function DrawHeader() {
+  const navigate = useNavigate();
+
+  function navigateToStart() {
+    navigate("/");
+  }
+
   return (
     <div className="navigator">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="#" onClick={navigateToStart}>
             서비스 명
           </a>
           <button
