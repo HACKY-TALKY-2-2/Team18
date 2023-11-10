@@ -13,6 +13,15 @@ function DrawStartBox() {
   function navigateToSimilar() {
     navigate("/similar");
   }
+
+  function navigateToSingleSimilar() {
+    navigate("/symmetry");
+  }
+
+  function navigateToMatch() {
+    navigate("/match");
+  }
+
   return (
     <div className="container">
       <div className="center">
@@ -26,7 +35,21 @@ function DrawStartBox() {
             type="button"
             onClick={navigateToSimilar}
           >
-            유사도
+            자기야, 나 사랑해? 얼만큼?
+          </button>
+          <button
+            className="btn btn-success"
+            type="button"
+            onClick={navigateToSingleSimilar}
+          >
+            나는 나를 사랑할까?
+          </button>
+          <button
+            className="btn btn-success"
+            type="button"
+            onClick={navigateToMatch}
+          >
+            내 도플갱어를 찾아서
           </button>
         </div>
       </div>

@@ -1,0 +1,22 @@
+.SimRes {
+  text-align: center;
+}
+
+/* 이름 스타일 */
+.SR-name {
+  font-size: 18px; /* 이름 글자 크기 설정 */
+  margin-top: 10px; /* 이미지와 이름 간격 설정 */
+  color: #333; /* 이름 글자 색상 설정 */
+  font-weight: bold; /* 이름 글자 굵게 설정 */
+}
+
+.card {
+  width: 60vw;
+  margin: 10px;
+}
+
+.SR-Discription {
+  display: flex;
+  justify-content: center; /* 가로 정렬 */
+  align-items: center; /* 세로 정렬 */
+}
