@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+# -*- coding: utf-8 -*-
 import face_recognition
 import pandas as pd
 import numpy as np
@@ -25,11 +25,4 @@ def find_doppleganger(img_dir:str ="resource/Images/biden.jpg",path_dir:str = "r
     idx = np.where(face_distances == match_face_distance)[0][0]
     max_df = df.loc[idx]
 
-    image_path = os.path.join(path_dir, max_df["img"])
-    out_image = face_recognition.load_image_file(image_path)
-    pil_image = Image.fromarray(out_image)
-    d = ImageDraw.Draw(pil_image)
-
-    print(f"유사도는 {round((1-match_face_distance)*100, 2)}% 입니다.")
-    # pil_image.show()
     return 1-match_face_distance, max_df["img"]
