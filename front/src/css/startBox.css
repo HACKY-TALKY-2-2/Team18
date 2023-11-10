@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "total";
+  src: url("../fonts/BMDOHYEON_ttf.ttf");
+}
+
+.container {
+  margin-top: 10%;
+  align-items: center;
+  justify-content: center;
+  font-family: "total";
+}
+
+.navigator {
+  font-family: "total";
+}
+
+.center {
+  text-align: center;
+}
+
+.serviceLogo {
+  text-align: center;
+}

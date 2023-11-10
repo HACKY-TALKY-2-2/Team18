@@ -1,0 +1,38 @@
+import TitleSym from "../components/TitleSym";
+import Solo from "../components/Solo";
+import SNS from "../components/SNS";
+import Discription from "../components/Discription";
+import DrawHeader from "../components/Header";
+import React, { useRef } from "react";
+import html2canvas from "html2canvas";
+import "../css/SimResPage.css";
+
+const SimResPage = ({ img1, img2, name1, name2 }) => {
+  const captureRef = useRef(null);
+
+  const handleCaptureClick = () => {
+    if (captureRef.current) {
+      html2canvas(captureRef.current).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = imgData;
+        link.download = "당신의_대칭성.png";
+        link.click();
+      });
+    }
+  };
+
+  return (
+    <div className="SimRes">
+      <DrawHeader></DrawHeader>
+      <div className="SR-save" ref={captureRef}>
+        <TitleSym props={{similarity:10, name1:"이1"}}></TitleSym>
+        <Solo props={{similarity:10, name1:"이1", img1:""}}></Solo>
+        <Discription props={{res:2, similarity:10}}></Discription>
+      </div>
+      <button type="button" className="btn btn-success" onClick={handleCaptureClick}>결과 저장하기</button>
+    </div>
+  );
+}
+
+export default SimResPage;

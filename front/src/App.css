@@ -1,38 +1,57 @@
-.App {
+@font-face {
+  font-family: "total";
+  src: url("./fonts/BMDOHYEON_ttf.ttf");
+  /* 중복이라 나중에 제거하는 게 나을수도 */
+}
+
+.SimRes {
+  font-family: "total";
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin: 3% auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.couple-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.image-container {
+  background-size: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 이미지 스타일 */
+.image {
+  border-radius: 1%;
+  width: 20vw;
+  height: 20vw;
+}
+
+.couple-container button {
+  margin: 10px;
+}
+
+/* 이름 스타일 */
+.SR-name {
+  font-size: 18px; /* 이름 글자 크기 설정 */
+  margin-top: 10px; /* 이미지와 이름 간격 설정 */
+  color: #333; /* 이름 글자 색상 설정 */
+  font-weight: bold; /* 이름 글자 굵게 설정 */
+}
+
+.similarity {
+  font-size: 18px; /* 이름 글자 크기 설정 */
+  color: #333; /* 이름 글자 색상 설정 */
+  font-weight: bold; /* 이름 글자 굵게 설정 */
+}
+
+.photo-image-container {
+  display: flex;
+  flex-direction: column; /* 컴포넌트를 세로로 나열 */
+  justify-content: center; /* 컴포넌트를 수직 가운데로 정렬 */
+  align-items: center; /* 컴포넌트를 수평 가운데로 정렬 */
 }
