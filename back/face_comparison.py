@@ -1,11 +1,11 @@
 import face_recognition
 
 fst_img = "obama"
-snd_img = "biden"
+snd_img = "obama2"
 threshold = 0.6
 
-fst_np_img = face_recognition.load_image_file(f"Image/{fst_img}.jpg")
-snd_np_img = face_recognition.load_image_file(f"Image/{snd_img}.jpg")
+fst_np_img = face_recognition.load_image_file(f"resource/Images/{fst_img}.jpg")
+snd_np_img = face_recognition.load_image_file(f"resource/Images/{snd_img}.jpg")
 
 # Get the face encodings for the known images
 fst_face_encoding = face_recognition.face_encodings(fst_np_img)[0]

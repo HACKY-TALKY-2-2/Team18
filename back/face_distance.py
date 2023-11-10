@@ -1,8 +1,8 @@
 import face_recognition
 
 # Load some images to compare against
-known_obama_image = face_recognition.load_image_file("Image/obama.jpg")
-known_biden_image = face_recognition.load_image_file("Image/biden.jpg")
+known_obama_image = face_recognition.load_image_file("resource/Images/obama.jpg")
+known_biden_image = face_recognition.load_image_file("resource/Images/biden.jpg")
 
 # Get the face encodings for the known images
 obama_face_encoding = face_recognition.face_encodings(known_obama_image)[0]
@@ -12,7 +12,7 @@ known_encodings = [
     obama_face_encoding,
     biden_face_encoding
 ]
-
+print(obama_face_encoding, biden_face_encoding)
 # Load a test image and get encondings for it
 image_to_test = face_recognition.load_image_file("obama.jpg")
 image_to_test_encoding = face_recognition.face_encodings(image_to_test)[0]
