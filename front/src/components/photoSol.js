@@ -1,8 +1,13 @@
 import React, { useState, useRef } from "react";
 import "../css/photo.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function PhotoSol() {
+  const locate = useLocation();
+  const navigate = useNavigate();
+  
   const [images, setImages] = useState([
     { selectedImage: null, previewImage: null },
     { selectedImage: null, previewImage: null },
@@ -62,6 +67,7 @@ function PhotoSol() {
       // 오류 처리
       console.error("Error uploading images:", error);
     }
+    navigate("/symResult");
   };
 
   return (
@@ -103,7 +109,7 @@ function PhotoSol() {
           </button>
         </div>
       </div>
-      <button type="button" className="btn btn-success">
+      <button type="button" className="btn btn-success" onClick={handleUpload}>
         등록하기
       </button>
     </div>

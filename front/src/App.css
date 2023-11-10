@@ -27,8 +27,8 @@
 /* 이미지 스타일 */
 .image {
   border-radius: 1%;
-  width: 20vw;
-  height: 20vw;
+  max-width: 20vw;
+  max-height: 20vw;
 }
 
 .couple-container button {

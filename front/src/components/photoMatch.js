@@ -1,8 +1,13 @@
 import React, { useState, useRef } from "react";
 import "../css/photo.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function PhotoMatch() {
+  const locate = useLocation();
+  const navigate = useNavigate();
+  
   const [images, setImages] = useState([
     { selectedImage: null, previewImage: null },
     { selectedImage: null, previewImage: null },
@@ -56,6 +61,7 @@ function PhotoMatch() {
       // 오류 처리
       console.error("Error uploading image:", error);
     }
+    navigate("/matchResult");
   };
 
   return (
@@ -119,7 +125,7 @@ function PhotoMatch() {
           )}
         </div>
       </div>
-      <button type="button" className="btn btn-success">
+      <button type="button" className="btn btn-success" onClick={handleUpload}>
         등록하기
       </button>
     </div>

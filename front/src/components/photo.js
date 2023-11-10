@@ -1,8 +1,14 @@
 import React, { useState, useRef } from "react";
 import "../css/photo.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Photo() {
+  const locate = useLocation();
+  const navigate = useNavigate();
+  
+
   const [images, setImages] = useState([
     { selectedImage: null, previewImage: null },
     { selectedImage: null, previewImage: null },
@@ -51,27 +57,27 @@ function Photo() {
     // 이미지 파일 추가
     images.forEach((image, index) => {
       if (image.selectedImage) {
-        formData.append(`image${index + 1}`, image.selectedImage);
+        formData.append(`file${index + 1}`, image.selectedImage);
       }
     });
-
-    // 텍스트 데이터 추가
-    formData.append("textFirst", textFirstInput);
-    formData.append("textSecond", textSecondInput);
 
     try {
       // 서버에 POST 요청 보내기
       const response = await axios.post(
-        "http://your-server-endpoint",
+        "http://101.101.211.232:5000/compare",
         formData
       );
-
       // 서버 응답 처리
       console.log(response.data);
     } catch (error) {
       // 오류 처리
       console.error("Error uploading images:", error);
     }
+
+  };
+
+  const handleRegister = () => {
+    navigate("/simResult", {state:{name1:textFirstInput, name2:textSecondInput}});
   };
 
   return (
@@ -155,7 +161,7 @@ function Photo() {
         style={{ marginBottom: "10px" }}
         type="button"
         className="btn btn-success"
-        onClick={handleUpload}
+        onClick={handleRegister}
       >
         등록하기
       </button>
