@@ -8,11 +8,11 @@
   text-align: center;
 }
 
-.SR-title {
+.title {
   margin: 60px;
 }
 
-.SR-couple-container {
+.couple-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@
 }
 
 /* 이미지 스타일 */
-.SR-img {
+.img {
   max-width: 100%;
   height: auto;
 }
@@ -33,7 +33,7 @@
   font-weight: bold; /* 이름 글자 굵게 설정 */
 }
 
-.SR-similarity{
+.similarity{
   font-size: 18px; /* 이름 글자 크기 설정 */
   color: #333; /* 이름 글자 색상 설정 */
   font-weight: bold; /* 이름 글자 굵게 설정 */
