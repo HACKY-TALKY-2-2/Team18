@@ -4,17 +4,17 @@ import "bootstrap";
 function Couple({props}) {
   console.log(props);
   return (
-    <div className="couple-container">
-      <div className="image-container">
-        <img src={"./example.png"} alt="img1" className="img"></img>
-        <h6 className="name">{props.name1}</h6>
+    <div className="SR-couple-container">
+      <div className="SR-image-container">
+        <img src={"./example.png"} alt="img1" className="SR-img"></img>
+        <h6 className="SR-name">{props.name1}</h6>
       </div>
-      <div className="similarity">
+      <div className="SR-similarity">
         <h6>{props.similarity}%</h6>
       </div>
-      <div className="image-container">
-        <img src={"./example.png"} alt="img1" className="img"></img>
-        <h6 className="name">{props.name2}</h6>
+      <div className="SR-image-container">
+        <img src={"./example.png"} alt="img1" className="SR-img"></img>
+        <h6 className="SR-name">{props.name2}</h6>
       </div>
     </div>
   );

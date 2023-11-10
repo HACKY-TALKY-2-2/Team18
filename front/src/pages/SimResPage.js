@@ -1,11 +1,10 @@
-import './SimResPage.css';
 import Title from "../components/Title";
 import Couple from "../components/Couple";
 import SNS from "../components/SNS";
 import Discription from "../components/Discription";
+import DrawHeader from "../components/Header";
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
-
 
 const SimResPage = ({img1,img2,name1,name2}) => {
   const captureRef = useRef(null);
@@ -24,13 +23,13 @@ const SimResPage = ({img1,img2,name1,name2}) => {
 
   return (
     <div className="SimRes">
-      <div className="save" ref={captureRef}>
+      <DrawHeader></DrawHeader>
+      <div className="SR-save" ref={captureRef}>
         <Title></Title>
         <Couple props={{similarity:10, name1:"이1", name2:"이2", img1:"",img2:""}}></Couple>
         <Discription props={{similarity:10, name1:"이1", name2:"이2"}}></Discription>
       </div>
       <button type="button" className="btn btn-success" onClick={handleCaptureClick}>결과 저장하기</button>
-      <SNS></SNS>
     </div>
   );
 }

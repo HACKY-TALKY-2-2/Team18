@@ -1,33 +1,39 @@
-.title {
-  margin: 60px;
+@font-face {
+  font-family: "total";
+  src: url("../fonts/BMDOHYEON_ttf.ttf");
+  /* 중복이라 나중에 제거하는 게 나을수도 */
 }
 
 .SimRes{
   text-align: center;
 }
 
-.couple-container {
-  display: flex; 
+.SR-title {
+  margin: 60px;
+}
+
+.SR-couple-container {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 5%;
 }
 
 /* 이미지 스타일 */
-.img {
+.SR-img {
   max-width: 100%;
   height: auto;
 }
 
 /* 이름 스타일 */
-.name {
+.SR-name {
   font-size: 18px; /* 이름 글자 크기 설정 */
   margin-top: 10px; /* 이미지와 이름 간격 설정 */
   color: #333; /* 이름 글자 색상 설정 */
   font-weight: bold; /* 이름 글자 굵게 설정 */
 }
 
-.similarity{
+.SR-similarity{
   font-size: 18px; /* 이름 글자 크기 설정 */
   color: #333; /* 이름 글자 색상 설정 */
   font-weight: bold; /* 이름 글자 굵게 설정 */

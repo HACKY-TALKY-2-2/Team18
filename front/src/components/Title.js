@@ -3,7 +3,7 @@ import "bootstrap";
 
 function Title() {
   return (
-    <div className="title">
+    <div className="SR-title">
       <h1>나와 그 사람은 얼마나 닮았을까?</h1>
       <h5>결과는 ...</h5>
     </div>
