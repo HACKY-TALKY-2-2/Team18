@@ -31,6 +31,10 @@
   height: 20vw;
 }
 
+.couple-container button {
+  margin: 10px;
+}
+
 /* 이름 스타일 */
 .SR-name {
   font-size: 18px; /* 이름 글자 크기 설정 */

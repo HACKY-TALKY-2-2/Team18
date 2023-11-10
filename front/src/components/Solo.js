@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap";
 
-function Solo({props}) {
+function Solo({ props }) {
   console.log(props);
   return (
     <div className="couple-container">

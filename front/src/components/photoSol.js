@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../css/photo.css";
+import axios from "axios";
 
 function PhotoSol() {
   const [images, setImages] = useState([
@@ -35,6 +36,32 @@ function PhotoSol() {
 
   const handleTextFirstChange = (e) => {
     setTextFirstInput(e.target.value);
+  };
+
+  const handleUpload = async () => {
+    // FormData 객체 생성
+    const formData = new FormData();
+
+    // 이미지 파일 추가
+    images.forEach((image, index) => {
+      if (image.selectedImage) {
+        formData.append(`image${index + 1}`, image.selectedImage);
+      }
+    });
+
+    try {
+      // 서버에 POST 요청 보내기
+      const response = await axios.post(
+        "http://your-server-endpoint",
+        formData
+      );
+
+      // 서버 응답 처리
+      console.log(response.data);
+    } catch (error) {
+      // 오류 처리
+      console.error("Error uploading images:", error);
+    }
   };
 
   return (

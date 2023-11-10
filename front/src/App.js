@@ -1,12 +1,12 @@
 import logo from "./logo.svg";
 import React from "react";
 import StartPage from "./pages/startPage";
-import SimResPage from './pages/SimResPage';
+import SimResPage from "./pages/SimResPage";
 import SimilarPage from "./pages/similarPage";
 import SymPage from "./pages/SymPage";
-import SymResPage from './pages/SymResPage';
+import SymResPage from "./pages/SymResPage";
 import MatchPage from "./pages/matchPage";
-import MatchResPage from './pages/MatchResPage';
+import MatchResPage from "./pages/MatchResPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 

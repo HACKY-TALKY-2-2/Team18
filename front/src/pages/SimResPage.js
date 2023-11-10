@@ -3,20 +3,20 @@ import Couple from "../components/Couple";
 import SNS from "../components/SNS";
 import Discription from "../components/Discription";
 import DrawHeader from "../components/Header";
-import React, { useRef } from 'react';
-import html2canvas from 'html2canvas';
+import React, { useRef } from "react";
+import html2canvas from "html2canvas";
 import "../css/SimResPage.css";
 
-const SimResPage = ({img1,img2,name1,name2}) => {
+const SimResPage = ({ img1, img2, name1, name2 }) => {
   const captureRef = useRef(null);
 
   const handleCaptureClick = () => {
     if (captureRef.current) {
       html2canvas(captureRef.current).then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const link = document.createElement('a');
+        const imgData = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
         link.href = imgData;
-        link.download = '당신과_그의_유사도.png';
+        link.download = "당신과_그의_유사도.png";
         link.click();
       });
     }

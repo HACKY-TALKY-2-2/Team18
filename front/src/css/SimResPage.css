@@ -1,4 +1,4 @@
-.SimRes{
+.SimRes {
   text-align: center;
 }
 
@@ -15,7 +15,7 @@
   margin: 10px;
 }
 
-.SR-Discription{
+.SR-Discription {
   display: flex;
   justify-content: center; /* 가로 정렬 */
   align-items: center; /* 세로 정렬 */

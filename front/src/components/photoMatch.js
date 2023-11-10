@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../css/photo.css";
+import axios from "axios";
 
 function PhotoMatch() {
   const [images, setImages] = useState([
@@ -35,6 +36,26 @@ function PhotoMatch() {
 
   const handleTextFirstChange = (e) => {
     setTextFirstInput(e.target.value);
+  };
+
+  const handleUpload = async () => {
+    // 첫 번째 이미지만 업로드하기
+    const formData = new FormData();
+    formData.append("image", images[0].selectedImage);
+
+    try {
+      // 서버에 POST 요청 보내기
+      const response = await axios.post(
+        "http://your-server-endpoint",
+        formData
+      );
+
+      // 서버 응답 처리
+      console.log(response.data);
+    } catch (error) {
+      // 오류 처리
+      console.error("Error uploading image:", error);
+    }
   };
 
   return (
