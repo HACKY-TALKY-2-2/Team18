@@ -26,9 +26,9 @@ const SimResPage = ({img1,img2,name1,name2}) => {
     <div className="SimRes">
       <DrawHeader></DrawHeader>
       <div className="SR-save" ref={captureRef}>
-        <Title></Title>
+        <Title props={{similarity:10, name1:"이1", name2:"이2"}}></Title>
         <Couple props={{similarity:10, name1:"이1", name2:"이2", img1:"",img2:""}}></Couple>
-        <Discription props={{similarity:10, name1:"이1", name2:"이2"}}></Discription>
+        <Discription props={{res:1, similarity:10}}></Discription>
       </div>
       <button type="button" className="btn btn-success" onClick={handleCaptureClick}>결과 저장하기</button>
     </div>
