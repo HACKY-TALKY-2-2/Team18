@@ -1,1 +1,46 @@
+@font-face {
+  font-family: "total";
+  src: url("./fonts/BMDOHYEON_ttf.ttf");
+  /* 중복이라 나중에 제거하는 게 나을수도 */
+}
 
+.SimRes{
+  font-family: total;
+  text-align: center;
+}
+
+.title {
+  margin: 3% auto;
+}
+
+.couple-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.image-container {
+  background-size: contain;
+}
+
+/* 이미지 스타일 */
+.image {
+  border-radius: 1%;
+  width: 20vw;
+  height: 20vw;
+}
+
+/* 이름 스타일 */
+.SR-name {
+  font-size: 18px; /* 이름 글자 크기 설정 */
+  margin-top: 10px; /* 이미지와 이름 간격 설정 */
+  color: #333; /* 이름 글자 색상 설정 */
+  font-weight: bold; /* 이름 글자 굵게 설정 */
+}
+
+.similarity{
+  font-size: 18px; /* 이름 글자 크기 설정 */
+  color: #333; /* 이름 글자 색상 설정 */
+  font-weight: bold; /* 이름 글자 굵게 설정 */
+}

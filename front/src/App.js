@@ -3,9 +3,8 @@ import React from "react";
 import StartPage from "./pages/startPage";
 import SimResPage from './pages/SimResPage';
 import SimilarPage from "./pages/similarPage";
-import DrawHeader from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './css/SimResPage.css';
+import './App.css';
 
 function App() {
   return (
