@@ -5,7 +5,7 @@ import numpy as np
 import csv
 import os
 
-def find_doppleganger(img_dir:str ="resource/Images/biden.jpg",path_dir:str = "resource/neutral/", DEBUG=False):
+def find_doppleganger(img_dir:str ="resource/Images/biden.jpg",path_dir:str = "resource/neutral/"):
     in_image = face_recognition.load_image_file(img_dir)
     img_encoding = face_recognition.face_encodings(in_image)[0]
 
@@ -25,4 +25,4 @@ def find_doppleganger(img_dir:str ="resource/Images/biden.jpg",path_dir:str = "r
     idx = np.where(face_distances == match_face_distance)[0][0]
     max_df = df.loc[idx]
 
-    return 1-match_face_distance, max_df["img"]
+    return 1-match_face_distance, max_df["name"], max_df["img"]

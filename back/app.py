@@ -8,13 +8,19 @@ import os
 
 app = Flask(__name__)
 
-url = "http://localhost:5000/upload/"
+
 app.config['UPLOAD_FOLDER'] = 'resource/uploads'
 app.config['RESOURCE_FOLDER'] = 'resource/neutral'
 
+DOPPLE = "dopple.jpg"
+SINGLE = "single.jpg"
+FIRST = "first.jpg"
+SECOND = "second.jpg"
+URL = "http://localhost:5000/upload/"
+
 @app.route('/upload/<filename>/<state>', methods=['GET'])
 def uploaded_file(filename, state=0):
-    if state == 0:
+    if state == '0':
         return send_from_directory(app.config['RESOURCE_FOLDER'], filename)
     else:
         return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
@@ -29,20 +35,20 @@ def upload_single():
         if file.filename == '':
             return jsonify({'error': 'No selected file'})
 
-        upload_path = os.path.join(app.config['UPLOAD_FOLDER'],"face.jpg")
+        upload_path = os.path.join(app.config['UPLOAD_FOLDER'],SINGLE)
         file.save(upload_path)
 
-        return jsonify({'image_path': upload_path, 'filename': "face.jpg"})
+        return jsonify({'image_path': upload_path})
 
     except Exception as e:
         return jsonify({'error': str(e)})
 
 @app.route('/single/symmetric', methods=['GET'])
 def get_symmetric():
-    path = os.path.join(app.config['UPLOAD_FOLDER'],"face.jpg")
+    path = os.path.join(app.config['UPLOAD_FOLDER'],SINGLE)
     score = face_for_single.symmetric(path)
 
-    return jsonify({"score":score,'image_url': url + "face.jpg" +'/1'})
+    return jsonify({"score":score,'image_url': URL + SINGLE +'/1'})
 
 @app.route('/compare', methods=['POST'])
 def upload_images():
@@ -55,20 +61,22 @@ def upload_images():
         if file1.filename == '' or file2.filename == '':
             return jsonify({'error': 'No selected file'})
 
-        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], "fst.jpg")
-        file1.save(upload_path)
-        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], "snd.jpg")
-        file2.save(upload_path)
-        return jsonify({"file1_name":"fst.jpg", "file2_name":"snd.jpg"})
+        upload_path1 = os.path.join(app.config['UPLOAD_FOLDER'], FIRST)
+        file1.save(upload_path1)
+        upload_path2 = os.path.join(app.config['UPLOAD_FOLDER'], SECOND)
+        file2.save(upload_path2)
+        return jsonify({"image_path1":upload_path1, "image_path2":upload_path2})
     except:
         return jsonify({"error": "Error saving"})
 
 @app.route('/compare/similarity', methods=['GET'])
 def compare_similarity():
     try:
-        sim = face_comparison.face_compare(app.config['UPLOAD_FOLDER'])
+        fst_path = os.path.join(app.config['UPLOAD_FOLDER'],FIRST)
+        snd_path = os.path.join(app.config['UPLOAD_FOLDER'],SECOND)
+        sim = face_comparison.face_compare(fst_path, snd_path)
 
-        return jsonify({'sim': sim, 'fst_url': url+'fst.jpg/1', 'snd_url': url+'snd.jpg/1'})
+        return jsonify({'sim': sim, 'fst_url': URL+FIRST+'/1', 'snd_url': URL+SECOND+'/1'})
     except Exception as e:
         return jsonify({'error': str(e)})
 
@@ -82,21 +90,21 @@ def upload_image():
         if file.filename == '':
             return jsonify({'error': 'No selected file'})
 
-        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+        upload_path = os.path.join(app.config['UPLOAD_FOLDER'], DOPPLE)
         file.save(upload_path)
 
-        return jsonify({'image_path': upload_path, 'filename': file.filename})
+        return jsonify({'image_path': upload_path})
 
     except Exception as e:
         return jsonify({'error': str(e)})
     
-@app.route('/dopple/<filename>', methods=['GET'])
-def get_dopple(filename):
+@app.route('/dopple/find', methods=['GET'])
+def get_dopple():
     try:
-        img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        sim, dopple_path = doppleganger.find_doppleganger(img_path, app.config['RESOURCE_FOLDER'])
+        img_path = os.path.join(app.config['UPLOAD_FOLDER'], DOPPLE)
+        sim, name, dopple_path = doppleganger.find_doppleganger(img_path, app.config['RESOURCE_FOLDER'])
 
-        return jsonify({'sim': sim, 'image_url': url + dopple_path+'/0'})
+        return jsonify({'sim': sim, 'name': name, 'image_url': URL + dopple_path+'/0'})
     except Exception as e:
         return jsonify({'error': str(e)})
 
