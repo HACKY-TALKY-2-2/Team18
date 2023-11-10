@@ -9,3 +9,11 @@
   color: #333; /* 이름 글자 색상 설정 */
   font-weight: bold; /* 이름 글자 굵게 설정 */
 }
+
+.card {
+  width: 40vw;
+}
+
+.SR-Discription{
+  text-align: center;
+}

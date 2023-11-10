@@ -15,10 +15,14 @@ function Discription({props}) {
 
   return (
     <div className="SR-Discription">
-      <p>
-        {props.name1}님과 {props.name2}님은 {props.similarity}% 닮았습니다.
-        {result(props.similarity)}
-      </p>
+      <div className="card">
+        <div className="card-body">
+          <p className="card-text">
+            {props.name1}님과 {props.name2}님은 {props.similarity}% 닮았습니다.
+            {result(props.similarity)}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Discription from "../components/Discription";
 import DrawHeader from "../components/Header";
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
+import "../css/SimResPage.css";
 
 const SimResPage = ({img1,img2,name1,name2}) => {
   const captureRef = useRef(null);
