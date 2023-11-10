@@ -17,8 +17,8 @@ function DrawStartBox() {
     <div className="container">
       <div className="center">
         <div className="serviceLogo">
-          <h1>서비스 명</h1>
-          <h5>사랑하면 닮는다던데......</h5>
+          <h1>너는 내 운명</h1>
+          <h5>Your My Destiny...</h5>
         </div>
         <div className="d-grid gap-2 col-6 mx-auto">
           <button
@@ -27,9 +27,6 @@ function DrawStartBox() {
             onClick={navigateToSimilar}
           >
             유사도
-          </button>
-          <button className="btn btn-success" type="button">
-            매칭
           </button>
         </div>
       </div>
