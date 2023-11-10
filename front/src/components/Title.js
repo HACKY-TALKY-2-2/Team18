@@ -3,8 +3,9 @@ import "bootstrap";
 
 function Title({props}) {
   const result = (sim)=>{
-    const h = 70;
-    const m = 30;
+    console.log(sim);
+    const h = 80;
+    const m = 60;
     if(sim>h){
       return (
         <>
@@ -29,8 +30,8 @@ function Title({props}) {
   }
   return (
     <div className="title">
-      {result(props.similarity)}
-      <h5>{props.name1}님과 {props.name2}님의 닮은 정도는 {props.similarity}%입니다.</h5>
+      {result(Math.min(props.similarity*200,100))}
+      <h5>{props.name1}님과 {props.name2}님의 닮은 정도는 {Math.min(props.similarity*200,100)}%입니다.</h5>
     </div>
   );
 }

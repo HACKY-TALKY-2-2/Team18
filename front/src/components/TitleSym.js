@@ -3,8 +3,8 @@ import "bootstrap";
 
 function TitleSym({props}) {
   const result = (sim)=>{
-    const h = 70;
-    const m = 30;
+    const h = 80;
+    const m = 60;
     if(sim>h){
       return (
         <>
@@ -29,8 +29,8 @@ function TitleSym({props}) {
   }
   return (
     <div className="title">
-      {result(props.similarity)}
-      <h5>{props.name1}님의 대칭성은 {props.similarity}%입니다.</h5>
+      {result(Math.min(props.similarity*200,100))}
+      <h5>{props.name1}님의 대칭성은 {Math.min(props.similarity*200,100)}%입니다.</h5>
     </div>
   );
 }

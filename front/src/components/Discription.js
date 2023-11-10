@@ -4,8 +4,8 @@ import "bootstrap";
 function Discription({props}) {
   const result = (res,sim)=>{
     if(res==1){
-      const h = 70;
-      const m = 40;
+      const h = 80;
+      const m = 60;
       if(sim>h){
         return (
           <p>당신은 최고의 커플이네요!</p>
@@ -52,7 +52,7 @@ function Discription({props}) {
       <div className="card">
         <div className="card-body">
           <p className="card-text">
-            {result(props.res,props.similarity)}
+            {result(props.res,Math.min(props.similarity*200,100))}
           </p>
         </div>
       </div>
