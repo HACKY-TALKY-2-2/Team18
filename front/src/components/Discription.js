@@ -5,7 +5,9 @@ function Discription({props}) {
   const result = (sim)=>{
     if(sim===100){
       return (
-        <p>천생연분이네요~</p>
+        <>
+          <p>천생연분이네요~<br/>사랑하면 닮는다더니...</p>
+        </>
       );
     }
     return (
