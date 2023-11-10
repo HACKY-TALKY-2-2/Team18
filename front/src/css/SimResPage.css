@@ -11,9 +11,12 @@
 }
 
 .card {
-  width: 40vw;
+  width: 60vw;
+  margin: 10px;
 }
 
 .SR-Discription{
-  text-align: center;
+  display: flex;
+  justify-content: center; /* 가로 정렬 */
+  align-items: center; /* 세로 정렬 */
 }

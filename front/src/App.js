@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StartPage />} />
-          <Route path="/result" element={<SimResPage />} />
+          <Route path="/simResult" element={<SimResPage />} />
           <Route path="/similar" element={<SimilarPage />} />
           <Route path="/symmetry" element={<SymPage />} />
           <Route path="/match" element={<MatchPage />} />
